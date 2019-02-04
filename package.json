@@ -1,0 +1,77 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon --inspect ./bin/www"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "import",
+      "prettier"
+    ],
+    "globals": {
+      "__DEV__": true,
+      "__DIR__": true
+    },
+    "rules": {
+      "import/extensions": [
+        1,
+        "never",
+        {
+          "svg": "always"
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true,
+          "optionalDependencies": false,
+          "peerDependencies": false
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "no-param-reassign": 0,
+      "no-underscore-dangle": 0,
+      "no-use-before-define": 0,
+      "no-console": 0,
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true
+        }
+      ]
+    },
+    "env": {
+      "node": true,
+      "es6": true
+    }
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.4.5",
+    "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "prettier": "^1.11.1"
+  }
+}

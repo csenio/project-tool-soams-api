@@ -7,7 +7,6 @@ const notesSaveOne = note =>
   new Promise((resolve, reject) => {
     const requiredFields = ['title', 'content'];
 
-    // Break if found an incorrect field
     const invalidField = requiredFields.find(field => {
       const value = note[field];
       return !value || !isString(value);
@@ -88,7 +87,6 @@ module.exports.notesUpdateOne = async (req, res, next) => {
     console.log('UPDA');
     const note = await notesFindOne(req.params.id);
 
-    // Only update value if set in body
     note.title = get(req, 'body.title', note.title);
     note.content = get(req, 'body.content', note.content);
     note.column = get(req, 'body.column', note.column);
